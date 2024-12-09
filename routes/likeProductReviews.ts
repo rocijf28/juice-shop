@@ -13,8 +13,8 @@ const security = require('../lib/insecurity')
 
 module.exports = function productReviews () {
   return (req: Request, res: Response, next: NextFunction) => {
-    const id = req.body.id
-    const user = security.authenticatedUsers.from(req)
+    const id = req.body.id.toString()
+    const user = security.authenticatedUsers.from(req).toString() 
     db.reviewsCollection.findOne({ _id: id }).then((review: Review) => {
       if (!review) {
         res.status(404).json({ error: 'Not found' })
