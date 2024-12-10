@@ -569,7 +569,7 @@ restoreOverwrittenFilesWithOriginals().then(() => {
   app.get('/rest/user/authentication-details', authenticatedUsers())
   app.get('/rest/products/search', search())
   app.get('/rest/basket/:id', basket())
-  app.post('/rest/basket/:id/checkout', order())
+  app.post('/rest/basket/:id/checkout', order()).toString()
   app.put('/rest/basket/:id/coupon/:coupon', coupon())
   app.get('/rest/admin/application-version', appVersion())
   app.get('/rest/admin/application-configuration', appConfiguration())
